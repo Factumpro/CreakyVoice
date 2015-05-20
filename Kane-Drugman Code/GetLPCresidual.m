@@ -42,7 +42,7 @@ if doPS==0
         segment=wave(start:stop);
 %         segment=segment.*hanning(length(segment));
 		seg_len = length(segment);
-        segment_hanning = 0.5*(1 - cos(2*pi*(1:seg_len)'/(seg_len+1))); % Hanning window
+        segment_hanning = 0.5*(1 -cos(2*pi*(1:seg_len)' /(seg_len +1))); % Hanning window
 		segment = segment.*segment_hanning; 
         
         [A,e]=lpc(segment,order);
@@ -75,7 +75,7 @@ else
         segment=wave(start:stop);
 %         segment=segment.*hanning(length(segment));
 		seg_len = length(segment);
-        segment_hanning = 0.5*(1 - cos(2*pi*(1:seg_len)'/(seg_len+1))); % Hanning window
+        segment_hanning = 0.5*(1 -cos(2*pi*(1:seg_len)' /(seg_len +1))); % Hanning window
 		segment = segment.*segment_hanning; 
 
         [A,e]=lpc(segment,order);

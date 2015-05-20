@@ -32,7 +32,7 @@ while Stop<length(wave)
     Sig=wave(Start:Stop); % Select frame segment
     %% Sig=Sig(:).*hanning(length(Sig)); % Window segment
 	Sig_len = length(Sig);
-    Sig_hanning = 0.5*(1 - cos(2*pi*(1:Sig_len)'/(Sig_len+1))); % Hanning window
+    Sig_hanning = 0.5*(1 -cos(2*pi*(1:Sig_len)' /(Sig_len +1))); % Hanning window
 	Sig = Sig(:).*Sig_hanning; 
 
    

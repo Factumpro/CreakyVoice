@@ -21,7 +21,7 @@ Stop=50/1000*fs;
 
 Hop=10/1000*fs;
 %% Win=hanning(Stop);
-Win = .5*(1 - cos(2*pi*(1:Stop)'/(Stop+1)));  % Hanning window
+Win = 0.5*(1 -cos(2*pi*(1:Stop)' /(Stop +1)));  % Hanning window
 Ind=1;
 f0=[];
 Delta=[];
