@@ -103,7 +103,7 @@ SRHVal = zeros(1,Nframes);
 
 N=stop-start+1;
 %BlackWin=blackman(N);
-BlackWin = 0.42 -0.5*cos(2*pi*(0:N-1)'/(N-1)) +0.08*cos(4*pi*(0:N-1)'/(N-1)); % Blackman window
+BlackWin = 0.42 -0.5*cos(2*pi*(0:N-1)' /(N-1)) +0.08*cos(4*pi*(0:N-1)' /(N-1)); % Blackman window
 
 index=1;
 while stop<=length(sig)
