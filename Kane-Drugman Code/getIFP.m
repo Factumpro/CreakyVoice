@@ -29,7 +29,8 @@ while finish <= length(x_filt)
 
     frame = x_filt(start:finish); % select frame
     t_IFP(n)=round(mean([start finish]));
-    [ACF,lags]=xcorr(frame,maxLag,'coeff'); % get normalised autocorrelation function
+%	[ACF,lags]=xcorr(frame,maxLag,'coeff'); % get normalised autocorrelation function
+	[ACF,lags]=autocorr1(frame,maxLag,'coeff'); % get normalised autocorrelation function
     ACF(lags<0)=[];
     lags(lags<0)=[];
     ACF(1:peak_tol)=0;

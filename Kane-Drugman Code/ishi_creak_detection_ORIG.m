@@ -147,7 +147,8 @@ for n=2:length(IPS);
         else
             peak_seg_cur = x_filt(peak_idx_samp(n)-round(N/2):peak_idx_samp(n)+round(N/2));
             peak_seg_prev = x_filt(peak_idx_samp(n-1)-round(N/2):peak_idx_samp(n-1)+round(N/2));
-            Rxx = xcorr(peak_seg_cur,peak_seg_prev,maxLags,'coeff'); % Normalised cross correlation
+%           Rxx = xcorr(peak_seg_cur,peak_seg_prev,maxLags,'coeff'); % Normalised cross correlation
+			Rxx = crosscorr1(peak_seg_cur,peak_seg_prev,maxLags,'coeff'); % Normalised cross correlation
             IPS(n)=max(Rxx);
         end
     end
