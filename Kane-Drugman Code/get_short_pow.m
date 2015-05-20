@@ -33,7 +33,7 @@ for n=std_len+1:length(pow)-std_len
     
     pow_std(n) = std(pow(n-std_len:n+std_len));
 end
-pow_std=medfilt1(pow_std,13);
-
+%pow_std=medfilt1(pow_std,13);
+pow_std = medfilt1D(pow_std,13);
 
 pow_std_inter=interp1(linspace(1,length(x),length(pow)),pow_std,1:length(x));

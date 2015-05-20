@@ -108,7 +108,8 @@ end
 if exist('Delta') 
     if isempty(Delta)==0
         Delta=smooth(Delta,moving_average_frame);
-        f0=medfilt1(f0,7);
+%       f0=medfilt1(f0,7);
+		f0=medfilt1D(f0,7);
         f0=smooth(f0,moving_average_frame);
         Delta=interp1(linspace(1,length(res),length(Delta)),Delta,1:length(res));
         %Delta=resample(Delta,length(res),length(Delta));

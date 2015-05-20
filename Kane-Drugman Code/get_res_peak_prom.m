@@ -77,7 +77,8 @@ while stop <= length(rep)
 end
 
 % Median filtering to remove outliers
-peak_prom=medfilt1(peak_prom,5);
+% peak_prom=medfilt1(peak_prom,5);
+peak_prom = medfilt1D(peak_prom,5);
 
 peak_prom(peak_t==0)=[];
 peak_idx(peak_t==0)=[];
